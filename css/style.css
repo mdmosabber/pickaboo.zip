@@ -24,6 +24,10 @@ body {
     width: 100%;
     padding: 0;
 }
+.header-main-menu .navbar {
+    padding: 0;
+    cursor: pointer;
+}
 .header-area .input-group-addon {
     padding: 0 30px;
     font: 500 13px/1.55 Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -40,7 +44,6 @@ body {
     color: #FFFFFF;
     text-transform: capitalize;
     border-radius: 30px;
-    margin: 0 5px;
     padding: 3px 8px;
 }
 .header-area ul li:nth-child(1) a {
@@ -64,7 +67,7 @@ body {
     background-color: #FFFFFF;
     box-shadow: 0 1px 1px 1px #EDEDED;
     padding: 15px 10px;
-    left: 30px;
+    left: 50px;
     top: 30px;
     position: absolute;
     width: 180px;
@@ -122,7 +125,7 @@ body {
 ====================================================*/
 .header-main-menu {
     background-color: #0198D1;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .header-main-menu .navbar {
     padding: 0;
@@ -140,34 +143,52 @@ body {
     background: #FFFFFF;
     color: #0198D1;
 }
-.menu-down-link {
-    position: relative;
-}
+
 .mega-menu{
     background-color: #FFFFFF;
-    max-width: 940px;
-    width: 85%;
-    margin: 0 auto;
-    margin-left: 16px;
+    width: 970px;
     display: none;
-    z-index: 999;
+    z-index: 9999;
     position: absolute;
-    top: 16.6%;
+    top: 100%;
+    left: 0;
 }
-.mega-menu ul li a {
+.mega-menu ul li a, .mega-menu-two ul li a, .mega-menu-three ul li a {
     color: #8C8585;
     text-transform: capitalize;
     text-decoration: none;
     line-height: 1.4em;
     text-shadow: 0 0 1px 1px;
 }
-.mega-menu ul li a:hover{
+.mega-menu ul li a:hover ,.mega-menu-two ul li a:hover, .mega-menu-three ul li a:hover{
     color: #0198D1;
 }
-.mega-menu h5 {
+.mega-menu h5, .mega-menu-two h5 .mega-menu-three h5{
     font-size: 16px;
     padding-bottom: 10px;
     margin: 0;
+}
+.mega-menu h5 a, .mega-menu-two h5 a, .mega-menu-three h5 a{
+   text-decoration: none;
+}
+
+.mega-menu-two{
+    background-color: #FFFFFF;
+    width: 950px;
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+.mega-menu-three{
+    background-color: #FFFFFF;
+    width: 970px;
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    top: 100%;
+    left: -100px;
 }
 /*====================================================
                     MEGA MENU END HERE
@@ -379,11 +400,6 @@ body {
 /*================================================
                 HOVER EFFECT
 =====================================================*/
-.hover-effect .position-absolute {
-    top: 0;
-    left: 0;
-    width: 100%;
-}
 .zoom {
     transition: 3s;
     position: relative;
@@ -404,7 +420,17 @@ body {
 }
 
 /* Radial Out */
-.zoom  {
+
+.position-absolute a {
+    color: transparent;
+    /*width: 1180px;*/
+    /*height: 250px;*/
+}
+.position-absolute {
+    left: 0;
+    top: 0;
+}
+.hvr-radial-out {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -412,11 +438,10 @@ body {
     box-shadow: 0 0 1px transparent;
     position: relative;
     overflow: hidden;
-    background: #e1e1e1;
     -webkit-transition-property: color;
     transition-property: color;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
 }
 .hvr-radial-out:before {
     content: "";
@@ -426,8 +451,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-rgba(189, 195, 199,1.0);
+    background: rgba(0,0,0,0.2);
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -438,20 +462,91 @@ rgba(189, 195, 199,1.0);
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
 }
-/*, .hvr-radial-out:focus, .hvr-radial-out:active
-, .hvr-radial-out:focus:before, .hvr-radial-out:active:before
-*/
-.zoom img:hover {
-    opacity: 0.5;
-    /*background:  rgba(189, 195, 199,1.0);*/
-    /*z-index: 999;*/
+.hvr-radial-out:hover{
+    color: transparent;
 }
-.zoom:hover:before{
+.hvr-radial-out:hover:before {
     -webkit-transform: scale(2);
     transform: scale(2);
 }
+/*==================================================
+                FOOTER TOP START HERE
+======================================================*/
+.bg-dark-own {
+    background: #F1F1F1;
+}
+.footer-top h4 {
+    color: #434343;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+.footer-top ul li {
+    padding: 0 0 10px;
+}
+.footer-top ul li a {
+    color: #434343;
+    font-size: 13px;
+    text-decoration: none;
+    text-shadow: 0 0 1px 1px;
+}
+.footer-top ul li a:hover {
+    color: #02AACC;
+}
+.footerTop-bottom p, .footerTop-bottom .h4 {
+    color: #434343;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+.footerTop-bottom i {
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 50%;
+    color: #000000;
+    background: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    margin-left: 5px;
+    transition: 1s;
+}
+.footerTop-bottom i:hover {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+.footerTop-bottom .input-group-addon {
+    background-color: #00AEEE;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+.footerTop-bottom {
+    border-top: 1px solid #E1C4E1;
+}
+.footer p{
+    color: #F1F1F1;
+    font-size: 11px;
+    margin: 0;
+    opacity: 0.5;
+}
 
-
+.scroll-top a{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    display: none;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #0C61C9;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
 
 
 
@@ -480,5 +575,18 @@ rgba(189, 195, 199,1.0);
         width: 100%;
         text-align: center;
     }
+    .main-menu-area .navbar-nav ,.navbar-brand,.footerTop-bottom .h4,.footerTop-bottom .social-icon{
+        text-align: center;
+        display: block;
+        margin: auto;
+        padding: 5px 0;
+    }
+    .nav-item {
+        margin: 5px 0;
+    }
+    .mega-menu ,.mega-menu-two,.mega-menu-three{
+        display: none !important;
+    }
+
 
 }
